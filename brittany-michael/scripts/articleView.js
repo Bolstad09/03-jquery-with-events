@@ -62,21 +62,20 @@ articleView.handleAuthorFilter = function() {
 
 articleView.handleCategoryFilter = function() {
   $('#category-filter').on('change', function() {
+    let $articleShow = $('article');
     if ($(this).val()) {
-      let selectedCategory= $(this).val();
-      $('article').hide();
-
-      $('article').filter(`[data-category="${selectedCategory}"]`).fadeIn('slow');
+      $articleShow.hide();
+      let $category = $(this).val();
+      $(`article[data-category=${$category}]`).show();
 
     } else {
-
-      $('article').show();
+      $articleShow.show();
       $('article.template').hide();
+
     }
-
-
     $('#author-filter').val('');
   });
+
 };
 
 articleView.handleMainNav = function() {
