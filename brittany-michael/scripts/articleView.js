@@ -115,5 +115,4 @@ $(document).ready(function() {
   articleView.handleCategoryFilter();
   articleView.handleMainNav();
   articleView.setTeasers();
-
 })
